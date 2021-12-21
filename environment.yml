@@ -6,6 +6,7 @@
     - opencv
     - pandas
     - Pillow
+    - matplotlib
     - pip
     - pip:
         - retina-face
