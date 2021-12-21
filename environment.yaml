@@ -1,0 +1,11 @@
+ channels:
+     - conda-forge
+ dependencies:
+     - dlib
+     - numpy
+     - pandas
+     - opencv
+     - face_recognition
+     - retina-face
+     - deepface
+     - Pillow
