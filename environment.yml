@@ -4,10 +4,10 @@
     - dlib
     - face_recognition
     - opencv
-    - numpy
     - pandas
     - Pillow
     - pip
     - pip:
         - retina-face
-        - deepface     
+        - deepface    
+        - numpy 
