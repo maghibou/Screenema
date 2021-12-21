@@ -10,4 +10,4 @@
     - pip:
         - retina-face
         - deepface    
-        - numpy 
+        - numpy
