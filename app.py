@@ -2,11 +2,11 @@ import streamlit as st
 import home
 from PIL import Image
 
-page_icon = Image.open('assets/istockphoto-1268952827-170667a.jpg')
+page_icon = Image.open('assets\Icon plus+.jpg')
 
 
 st.set_page_config(
-    page_title='My Cool App',
+    page_title='SCREENEMA',
     page_icon=page_icon,
     layout='wide'
 )

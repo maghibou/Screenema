@@ -19,6 +19,9 @@ import pickle
 import streamlit as st
 
 def render():
+  with open("style.css") as f:
+    st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
+    st.text('test')
 
   # Import Database pickle 
   path_others ='data/other_member.pkl'
