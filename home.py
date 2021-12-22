@@ -63,16 +63,16 @@ def render():
         dist_list = []
         # Loop over each encoded face
         for test_encoding in faces_to_find:
-        min_dist = distance_slider
-        min_key = "unknown"
-        for key in embedded_pics_pickle:
-            for encoding in embedded_pics_pickle[key]:
-                dist = np.linalg.norm(encoding-test_encoding)
-                if dist < min_dist: #erreur dans la correction ici ^^
-                    min_dist = dist
-                    min_key = key
-        actors_list.append(min_key)
-        dist_list.append(min_dist)
+            min_dist = distance_slider
+            min_key = "unknown"
+            for key in embedded_pics_pickle:
+                for encoding in embedded_pics_pickle[key]:
+                    dist = np.linalg.norm(encoding-test_encoding)
+                    if dist < min_dist: #erreur dans la correction ici ^^
+                        min_dist = dist
+                        min_key = key
+            actors_list.append(min_key)
+            dist_list.append(min_dist)
         return boxes, actors_list, dist_list, img 
 
     # convert image from opened file to encoded (embedded) image and face recognition
@@ -179,23 +179,23 @@ def render():
     if screenshot:
         col1, col2, col3 = st.columns([6,1,6])
         with col1:
-        if st.button("recognise"):
-            image = display_image_recognition(screenshot)
-            st.image(image)
-            # display df with recognised actors preprocess_image
-            actors_filter = preprocess_df_filter(screenshot)
-            df = pd.read_csv('data/TBBT_actors.csv', sep=',')
-            mask = df['actor'].isin(actors_filter[0])
-            df_filtered = df[mask].drop(columns = "Unnamed: 0")
-            df_filtered["distance"] = df_filtered["actor"].apply(lambda x: actors_filter[1][actors_filter[0].index(x)])
-            df_filtered = df_filtered.to_html(escape=False)
-            st.write(df_filtered, unsafe_allow_html=True)
+            if st.button("recognise"):
+                image = display_image_recognition(screenshot)
+                st.image(image)
+                # display df with recognised actors preprocess_image
+                actors_filter = preprocess_df_filter(screenshot)
+                df = pd.read_csv('data/TBBT_actors.csv', sep=',')
+                mask = df['actor'].isin(actors_filter[0])
+                df_filtered = df[mask].drop(columns = "Unnamed: 0")
+                df_filtered["distance"] = df_filtered["actor"].apply(lambda x: actors_filter[1][actors_filter[0].index(x)])
+                df_filtered = df_filtered.to_html(escape=False)
+                st.write(df_filtered, unsafe_allow_html=True)
         with col2:
-        st.image('assets/LOGO1.png')
+            st.image('assets/LOGO1.png')
         with col3:
-        if st.button("emotion"):
-            image = get_emotion(screenshot)
-            st.image(image)
+            if st.button("emotion"):
+                image = get_emotion(screenshot)
+                st.image(image)
 
       
 
