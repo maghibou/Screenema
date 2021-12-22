@@ -160,6 +160,14 @@ def render():
   # SCREENEMA
   > Who the *** is this actor playing this movie? Scan/browse it to find it out !! 
   """)
+    col1,  col2, col3 = st.columns([6,1,6])
+  with col1: 
+    st.text("")
+  with col2: 
+    st.image("assets/LOGO1.png")
+  with col3: 
+    st.text("")
+
 
   # displays a file uploader widget and return to BytesIO
   screenshot = st.file_uploader(
@@ -182,8 +190,7 @@ def render():
         df_filtered = df_filtered.to_html(escape=False)
         st.write(df_filtered, unsafe_allow_html=True)
     with col2:
-      ticket = Image.open('assets/LOGO1.png')
-      st.image(ticket)
+      st.image('assets/LOGO1.png')
     with col3:
       if st.button("emotion"):
         image = get_emotion(screenshot)
