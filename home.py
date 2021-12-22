@@ -20,7 +20,19 @@ import streamlit as st
 
 def render():
   #page 
+  #page sliders
   distance_slider = st.sidebar.slider("distance threshold", min_value=0.0, max_value=1.0, value=0.6)
+  with st.sidebar.form("box and text color"):
+    st.write("box and text color")
+    RED = st.slider("red", min_value=0, max_value=255, value=131)
+    GREEN = st.slider("green", min_value=0, max_value=255, value=35)
+    BLUE = st.slider("blue", min_value=0, max_value=255, value=38)
+    TEXT_SIZE = st.slider("Text size", min_value=0.25, max_value=5.00, value=0.75)
+
+    submitted = st.form_submit_button("Submit")
+    if submitted:
+        st.write("ok!")
+  # CSS Style
   with open("style.css") as f:
     st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
 
@@ -69,8 +81,8 @@ def render():
         cv2.rectangle(img, (left, top), (right, bottom), (255, 0, 0), 3)
         font = cv2.FONT_HERSHEY_SIMPLEX
         bottomLeftCornerOfText = (10,500)
-        fontScale  = 0.75
-        fontColor = (255,0,0)
+        fontScale  = TEXT_SIZE
+        fontColor = (RED, GREEN, BLUE)
         lineType = 2
         # get actor's name above the boxe
         cv2.putText(img, f'{member}', (left, top-10), font, fontScale, fontColor, lineType)
@@ -86,8 +98,8 @@ def render():
       cv2.rectangle(img, (left, top), (right, bottom), (255, 0, 0), 3)
       font = cv2.FONT_HERSHEY_SIMPLEX
       bottomLeftCornerOfText = (10,500)
-      fontScale  = 0.75
-      fontColor = (255,0,0)
+      fontScale  = TEXT_SIZE
+      fontColor = (RED, GREEN, BLUE)
       lineType = 2
       # get actor's emotion under the boxe
       obj = DeepFace.analyze(img_path = img, actions = ['emotion'], enforce_detection =False) #'age', 'gender', 'race', 
@@ -104,8 +116,8 @@ def render():
       cv2.rectangle(img, (left, top), (right, bottom), (255, 0, 0), 3)
       font = cv2.FONT_HERSHEY_SIMPLEX
       bottomLeftCornerOfText = (10,500)
-      fontScale  = 0.75
-      fontColor = (255,0,0)
+      fontScale  = TEXT_SIZE
+      fontColor = (RED, GREEN, BLUE)
       lineType = 2
       # get actor's emotion under the boxe
       obj = DeepFace.analyze(img_path = img, actions = ['age'], enforce_detection =False) # 'gender', 'race', 'emotion'
