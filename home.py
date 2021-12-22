@@ -165,7 +165,7 @@ def render():
     with col1: 
         st.text("")
     with col2: 
-        st.image("assets\LOGO1.png")
+        st.image(os.path.join('assets', "LOGO1.png"))
     with col3: 
         st.text("")
 
@@ -191,7 +191,7 @@ def render():
                 df_filtered = df_filtered.to_html(escape=False)
                 st.write(df_filtered, unsafe_allow_html=True)
         with col2:
-            st.image('assets/LOGO1.png')
+            st.image(os.path.join('assets', 'LOGO1.png'))
         with col3:
             if st.button("emotion"):
                 image = get_emotion(screenshot)

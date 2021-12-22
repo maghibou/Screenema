@@ -1,8 +1,9 @@
 import streamlit as st
 import home as home
 from PIL import Image
+import os
 
-page_icon = st.image("assets\Icon plus+.jpg")
+page_icon = st.image(os.path.join('assets', "Icon plus+.jpg"))
 
 
 st.set_page_config(
