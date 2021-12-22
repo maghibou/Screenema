@@ -1,9 +1,8 @@
 import streamlit as st
-import home as home
+import home
 from PIL import Image
-import os
 
-page_icon = st.image(os.path.join('assets', "Icon plus+.jpg"))
+page_icon = Image.open('assets/popcorn.jpg')
 
 
 st.set_page_config(
@@ -13,10 +12,12 @@ st.set_page_config(
 )
 
 # pages_dict = {
-#     'home': home.render
+#     'The Big Bang Theory': home.render
 # }
 
 # selected_page = st.sidebar.selectbox("Go to page:", options=pages_dict)
+
+
 
 home.render()
 # pages_dict[selected_page]()

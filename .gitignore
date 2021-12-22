@@ -5,4 +5,7 @@
 venv/
 __pycache__/
 .ipynb_checkpoints/
+
+# brouillons/trash | sauvegardes | dossier ignoré
 /trash
+/gitignore
