@@ -165,7 +165,7 @@ def render():
     with col1: 
         st.text("")
     with col2: 
-        st.image("assets/LOGO1.png")
+        st.image("assets\LOGO1.png")
     with col3: 
         st.text("")
 
