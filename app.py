@@ -1,5 +1,5 @@
 import streamlit as st
-import trash.home_v01 as home_v01
+import home as home
 from PIL import Image
 
 page_icon = st.image("assets\Icon plus+.jpg")
@@ -17,5 +17,5 @@ st.set_page_config(
 
 # selected_page = st.sidebar.selectbox("Go to page:", options=pages_dict)
 
-home_v01.render()
+home.render()
 # pages_dict[selected_page]()
