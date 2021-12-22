@@ -1,8 +1,18 @@
 body {
     background-color: #eee;
+    display: flex;
+    justify-content: center;
+    text-align : center;
+    font-family: 'Poppins', sans-serif;
+
 }
 
 .fullScreenFrame > div {
     display: flex;
     justify-content: center;
+    text-align : center;
+}
+body h1{
+    font-family: 'Cinzel', serif;
+    font-weight: 200;
 }
